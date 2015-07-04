@@ -1,5 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Welcome to the SGR App!")
+    numList = range(1, 10)
+    context = {
+        'numList': numList
+    }
+    return render(request, 'SGRapp/index.html', context)
