@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from .models import Game
 
 
 def index(request):
-    numList = range(1, 10)
+    games_list = Game.objects.all()
     context = {
-        'numList': numList
+        'games_list': games_list
     }
     return render(request, 'SGRapp/index.html', context)
