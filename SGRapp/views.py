@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import Game
 import steamapi
 from steamGameRatings.settings import STEAM_API_KEY
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def index(request):
@@ -18,10 +19,16 @@ def results(request, steamId=None, steamName=None):
     steamapi.core.APIConnection(api_key=STEAM_API_KEY)
     # need to try and catch error here:
     user = steamapi.user.SteamUser(userid=steamId, userurl=steamName)
+    games = []
+    for game in user.games:
+        try:
+            games.append(Game.objects.get(pk=game.id))
+        except ObjectDoesNotExist:
+            print(str(game.id) + " does not exist in db.")
     context = {
         'steamName': user.name,
         'steamId': user.id,
-        'games': user.games,
+        'games': games,
         'avatarImg': user.avatar_medium,
     }
     return render(request, 'SGRapp/results.html', context)
