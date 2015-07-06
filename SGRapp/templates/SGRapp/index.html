@@ -1,5 +1,15 @@
 Welcome to the SGR App!
 
+<form method="GET" action="{% url 'goto' %}">
+<input type="text" name="userInput">
+<select name="inputType">
+  <option value="steamName">Steam Name</option>
+  <option value="steamId">Steam ID</option>
+</select>
+<input type="submit" value="Enter">
+</form>
+
 {% for game in games_list %}
     <p>{{ game.name }}</p>
 {% endfor %}
+
