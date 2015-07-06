@@ -25,8 +25,8 @@ def results(request, steamId=None, steamName=None):
 
 
 def goto(request):
-    userInput = request.GET.get('userInput')
-    if request.GET.get('inputType') == 'Steam Name':
+    userInput = request.GET.get('userInput', '')
+    if request.GET.get('inputType') == 'steamName':
         return HttpResponseRedirect('/username/' + userInput)
     else:
         return HttpResponseRedirect('/id/' + userInput)
