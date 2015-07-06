@@ -1,1 +1,15 @@
-userid is: {{ username }}
+{% if avatarImg %}
+    <img src="{{ avatarImg }}" /> 
+{% endif %}
+<br>
+Steam Name: {{ steamName }}
+<br>
+SteamID: {{ steamId }}
+
+<table>
+{% for game in games %}
+    <tr><td>    
+    {{ forloop.counter }} - {{ game.name }}
+    </td></tr>
+{% endfor %}
+</table>
