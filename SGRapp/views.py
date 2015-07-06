@@ -16,12 +16,8 @@ def index(request):
 
 def results(request, steamId=None, steamName=None):
     steamapi.core.APIConnection(api_key=STEAM_API_KEY)
-    if steamId is not None:
-        user = steamapi.user.SteamUser(steamId)
-
-    if steamName is not None:
-        user = steamapi.user.SteamUser(userurl=steamName)
-
+    # need to try and catch error here:
+    user = steamapi.user.SteamUser(userid=steamId, userurl=steamName)
     context = {
         'steamName': user.name,
         'steamId': user.id,
