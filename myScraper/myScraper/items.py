@@ -8,7 +8,8 @@
 import scrapy
 
 
-class MyscraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class GameItem(scrapy.Item):
+    appid = scrapy.Field()
+    name = scrapy.Field()
+    positive = scrapy.Field()
+    negative = scrapy.Field()
