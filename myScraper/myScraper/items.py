@@ -8,12 +8,6 @@
 import scrapy
 
 
-# class GameItem(scrapy.Item):
-#     appid = scrapy.Field()
-#     name = scrapy.Field()
-#     positive = scrapy.Field()
-#     negative = scrapy.Field()
-
 class GameItem(scrapy.Item):
     model = scrapy.Field()
     pk = scrapy.Field()
