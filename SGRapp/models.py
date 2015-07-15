@@ -11,6 +11,10 @@ class Game(models.Model):
     wilson = models.DecimalField(max_digits=5, decimal_places=2, editable=False)
 
     def save(self):
-        self.rating = float(self.positive) * 100 / (self.positive + self.negative)
-        self.wilson = (((float(self.positive) + 1.9208) / (float(self.positive) + float(self.negative)) - 1.96 * sqrt((float(self.positive) * float(self.negative)) / (float(self.positive) + float(self.negative)) + 0.9604) / (float(self.positive) + float(self.negative))) / (1 + 3.8416 / (float(self.positive) + float(self.negative)))) * 100
+        if self.positive + self.negative > 0:
+            self.rating = float(self.positive) * 100 / (self.positive + self.negative)
+            self.wilson = (((float(self.positive) + 1.9208) / (float(self.positive) + float(self.negative)) - 1.96 * sqrt((float(self.positive) * float(self.negative)) / (float(self.positive) + float(self.negative)) + 0.9604) / (float(self.positive) + float(self.negative))) / (1 + 3.8416 / (float(self.positive) + float(self.negative)))) * 100
+        else:
+            self.rating = 0
+            self.wilson = 0
         super(Game, self).save()

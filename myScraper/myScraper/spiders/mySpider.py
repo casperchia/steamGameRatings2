@@ -25,20 +25,28 @@ class MyspiderSpider(scrapy.Spider):
             if 'app' in response.url:
                 if (len(response.xpath('//div[@class="apphub_AppName"]/text()')) > 0):
                     item = GameItem()
+                    item['model'] = "SGRapp.game"
                     m = re.search('app/(\d+)', response.url)
-                    item['appid'] = int(m.group(1))
-                    item['name'] = response.xpath('//div[@class="apphub_AppName"]/text()').extract()[0]
-                    item['positive'] = 0
-                    item['negative'] = 0
+                    item['pk'] = int(m.group(1))
+
+                    name = response.xpath('//div[@class="apphub_AppName"]/text()').extract()[0]
+                    positive = 0
+                    negative = 0
 
                     posSelector = response.xpath('//*[@id="ReviewsTab_positive"]/a/span[@class="user_reviews_count"]/text()')
                     if (len(posSelector) > 0):
                         positiveString = posSelector.extract()[0].replace("(", "").replace(")", "").replace(",", "")
-                        item['positive'] = int(positiveString)
+                        positive = int(positiveString)
 
                     negSelector = response.xpath('//*[@id="ReviewsTab_negative"]/a/span[@class="user_reviews_count"]/text()')
                     if (len(negSelector) > 0):
                         negativeString = negSelector.extract()[0].replace("(", "").replace(")", "").replace(",", "")
-                        item['negative'] = int(negativeString)
+                        negative = int(negativeString)
+
+                    item['fields'] = {
+                        'name': name,
+                        'positive': positive,
+                        'negative': negative,
+                    }
 
                     yield item

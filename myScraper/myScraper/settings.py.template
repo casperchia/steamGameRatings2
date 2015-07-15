@@ -91,6 +91,9 @@ DOWNLOADER_MIDDLEWARES = {
     'myScraper.middlewares.RedirectMiddleware': 543,
     'scrapy.downloadermiddlewares.redirect.RedirectMiddleware': None,
 }
+ITEM_PIPELINES = {
+    'myScraper.pipelines.MyscraperPipeline': 300,
+}
 REDIRECT_MAX_TIMES = 3
 DEPTH_LIMIT = 3
 LOG_FILE = "mylog.log"
