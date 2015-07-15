@@ -20,7 +20,7 @@ $(document).ready( function () {
     $('#gamesTable').DataTable( {
         "pageLength": 50,
         "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
-        "order": [[4, 'desc'], [2, 'desc']]
+        "order": [[5, 'desc'], [4, 'desc']]
     } );
 } );
 </script>
@@ -45,7 +45,8 @@ $(document).ready( function () {
                 <td>Name</td>
                 <td>Positive (+)</td>
                 <td>Negative (-)</td>
-                <td>Rating (%)</td>
+                <td>User Rating (%)</td>
+                <td>Wilson (%)</td>
             </tr>
         </thead>
         <tbody>
@@ -56,6 +57,7 @@ $(document).ready( function () {
                     <td>{{ game.positive }}</td>
                     <td>{{ game.negative }}</td>
                     <td>{{ game.rating }}</td>
+                    <td>{{ game.wilson }}</td>
                 </tr>
             {% endfor %}
         </tbody>
