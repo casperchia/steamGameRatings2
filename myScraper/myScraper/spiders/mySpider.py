@@ -27,7 +27,7 @@ class MyspiderSpider(scrapy.Spider):
                     item = GameItem()
                     m = re.search('app/(\d+)', response.url)
                     item['appid'] = int(m.group(1))
-                    item['name'] = response.xpath('//div[@class="apphub_AppName"]/text()').extract()
+                    item['name'] = response.xpath('//div[@class="apphub_AppName"]/text()').extract()[0]
                     item['positive'] = 0
                     item['negative'] = 0
 
