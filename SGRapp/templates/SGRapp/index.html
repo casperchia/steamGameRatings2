@@ -2,17 +2,32 @@
 
 {% block body_block %}
 
-    <div class="container">
-        <h1>Welcome to Steam Ratings!</h1>
+    <div class="container text-align-center">
+        <h1 class="font-extra-large">Welcome to Steam Ratings!</h1>
+        <h3>Sort your Steam library based on Steam's user ratings.</h3>
+    </div>
 
-        <form method="GET" action="{% url 'goto' %}">
-        <input type="text" name="userInput">
-        <select name="inputType">
-            <option value="steamName">Steam Name</option>
-            <option value="steamId">Steam ID</option>
-        </select>
-        <input type="submit" value="Enter">
-        </form>
+    <div class="container-fluid container-lightblue" id="form-container">
+        <div class="container text-align-center">
+            <p>To get your steam id, please ensure that your profile is set to public.</p>
+
+            <form method="GET" action="{% url 'goto' %}">
+                <label for="userInput">http://steamcommunity.com/id/</label>
+                <input type="text" name="userInput">
+                <input type="hidden" name="inputType" value="steamName">
+                <input type="submit" value="Enter">
+            </form>
+
+            <h4>or</h4>
+
+            <form method="GET" action="{% url 'goto' %}">
+                <label for="userInput">http://steamcommunity.com/profiles/</label>
+                <input type="text" name="userInput">
+                <input type="hidden" name="inputType" value="steamId">
+                <input type="submit" value="Enter">
+            </form>
+
+        </div>
     </div>
 
 {% endblock %}

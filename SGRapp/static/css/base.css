@@ -8,6 +8,8 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   background-color: #FDFFFC;
+  font-family: 'Ubuntu', sans-serif;
+  color: #011627;
 }
 .footer {
   position: absolute;
@@ -37,4 +39,27 @@ body > .container {
 
 code {
   font-size: 80%;
+}
+
+.navbar-title {
+    font-weight: bold;
+    font-size: 30px;
+    color: #011627;
+}
+
+.container-lightblue {
+  background-color: #2EC4B6;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.font-extra-large {
+  font-size: 60px;
+}
+
+#form-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
