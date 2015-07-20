@@ -6,6 +6,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -16,14 +17,32 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+        <link href="{% static "css/base.css" %}" rel="stylesheet" type="text/css">
+
         <title>{% block title %}Steam Ratings{% endblock %}</title>
         {% block head_block %}
         {% endblock %}
     </head>
 
     <body>
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Steam Ratings</a>
+                </div>
+            </div>
+        </nav>
+
         {% block body_block %}
         {% endblock %}
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">Casper Chia</p>
+            </div>
+        </footer>
+
     </body>
 
 </html>
