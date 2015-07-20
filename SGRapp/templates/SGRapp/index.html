@@ -1,11 +1,18 @@
-Welcome to the SGR App!
+{% extends 'SGRapp/base.html' %}
 
-<form method="GET" action="{% url 'goto' %}">
-<input type="text" name="userInput">
-<select name="inputType">
-  <option value="steamName">Steam Name</option>
-  <option value="steamId">Steam ID</option>
-</select>
-<input type="submit" value="Enter">
-</form>
+{% block body_block %}
 
+    <div class="container">
+        <h1>Welcome to Steam Ratings!</h1>
+
+        <form method="GET" action="{% url 'goto' %}">
+        <input type="text" name="userInput">
+        <select name="inputType">
+            <option value="steamName">Steam Name</option>
+            <option value="steamId">Steam ID</option>
+        </select>
+        <input type="submit" value="Enter">
+        </form>
+    </div>
+
+{% endblock %}
