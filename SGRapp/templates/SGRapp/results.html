@@ -1,40 +1,40 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Steam Game Ratings</title>
+{% extends 'SGRapp/base.html' %}
 
-<!-- DataTables CSS -->
-<!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.css"> -->
-<!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> -->
-<!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css"> -->
+{% block head_block %}
+    <!-- DataTables CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css"> -->
 
-<!-- jQuery -->
-<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  
-<!-- DataTables -->
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 
-<script type="text/javascript" charset="utf-8">
-$(document).ready( function () {
-    $('#gamesTable').DataTable( {
-        "pageLength": 50,
-        "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
-        "order": [[5, 'desc'], [4, 'desc']]
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready( function () {
+        $('#gamesTable').DataTable( {
+            "pageLength": 50,
+            "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+            "order": [[5, 'desc'], [4, 'desc']]
+        } );
     } );
-} );
-</script>
+    </script>
+{% endblock %}
 
-</head>
-<body>
-    {% if avatarImg %}
-        <img src="{{ avatarImg }}" /> 
-    {% endif %}
-    <br>
-    Steam Name: {{ steamName }}
-    <br>
-    SteamID: {{ steamId }}
 
+{% block body_block %}
+    <div class="container jumbotron">
+        {% if avatarImg %}
+            <img src="{{ avatarImg }}" />
+        {% endif %}
+        <br>
+        Steam Name: {{ steamName }}
+        <br>
+        SteamID: {{ steamId }}
+    </div>
 
 
     <div class="container">
@@ -63,7 +63,4 @@ $(document).ready( function () {
         </tbody>
     </table>
     </div>
-
-    
-</body>
-</html>
+{% endblock %}
