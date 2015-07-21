@@ -9,22 +9,23 @@
 
     <div class="container-fluid container-lightblue" id="form-container">
         <div class="container text-align-center">
-            <p>To get your steam id, please ensure that your profile is set to public.</p>
+            <p>To retrieve your steam library, please ensure that your profile is set to public.</p>
+            <br>
 
-            <form method="GET" action="{% url 'goto' %}">
+            <form class="form-inline" method="GET" action="{% url 'goto' %}">
                 <label for="userInput">http://steamcommunity.com/id/</label>
-                <input type="text" name="userInput">
+                <input type="text" class="form-control" name="userInput" placeholder="Username">
                 <input type="hidden" name="inputType" value="steamName">
-                <input type="submit" value="Enter">
+                <input type="submit" class="btn btn-default" value="Enter">
             </form>
 
             <h4>or</h4>
 
-            <form method="GET" action="{% url 'goto' %}">
+            <form class="form-inline" method="GET" action="{% url 'goto' %}">
                 <label for="userInput">http://steamcommunity.com/profiles/</label>
-                <input type="text" name="userInput">
+                <input type="text" class="form-control" name="userInput" placeholder="SteamID">
                 <input type="hidden" name="inputType" value="steamId">
-                <input type="submit" value="Enter">
+                <input type="submit" class="btn btn-default" value="Enter">
             </form>
 
         </div>
