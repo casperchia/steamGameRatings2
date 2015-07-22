@@ -26,14 +26,26 @@
 
 
 {% block body_block %}
-    <div class="container jumbotron">
-        {% if avatarImg %}
-            <img src="{{ avatarImg }}" />
-        {% endif %}
-        <br>
-        Steam Name: {{ steamName }}
-        <br>
-        SteamID: {{ steamId }}
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    <table id="table-margin">
+                        <tr><td>
+                            <img src="{{ avatarImg }}" class="img-thumbnail" id="avatar"/>
+                        </td></tr>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <table id="table-margin">
+                        <tr><td>Steam Name: {{ steamName }}</td></tr>
+                        <tr><td>SteamID: {{ steamId }}</td></tr>
+                        <tr><td>Level {{ steamLevel }}</td></tr>
+                        <tr><td>{{ steamUrl }}</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
 

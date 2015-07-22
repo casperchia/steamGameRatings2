@@ -28,8 +28,11 @@ def results(request, steamId=None, steamName=None):
     context = {
         'steamName': user.name,
         'steamId': user.id,
+        'steamLevel': user.level,
+        'steamUrl': user.profile_url,
+        'privacy': user.privacy,
         'games': games,
-        'avatarImg': user.avatar_medium,
+        'avatarImg': user.avatar_full,
     }
     return render(request, 'SGRapp/results.html', context)
 

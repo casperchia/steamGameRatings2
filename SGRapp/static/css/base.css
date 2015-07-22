@@ -9,7 +9,8 @@ body {
   margin-bottom: 60px;
   background-color: #FDFFFC;
   font-family: 'Ubuntu', sans-serif;
-  color: #011627;
+  /*color: #011627;*/
+  color: #01213A;
 }
 .footer {
   position: absolute;
@@ -17,15 +18,16 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #011627;
+  /*background-color: #011627;*/
+  background-color: #01213A;
 }
 
 
 /* Custom page CSS
 -------------------------------------------------- */
 
-body > .container {
-  padding: 40px 15px 40px;
+#welcome-container {
+  padding: 20px 15px 30px;
 }
 .container .footer-text {
   margin: 20px 0;
@@ -44,7 +46,8 @@ code {
 .navbar-title {
     font-weight: bold;
     font-size: 30px;
-    color: #011627;
+    /*color: #011627;*/
+    color: #01213A;
 }
 
 .container-lightblue {
@@ -70,4 +73,12 @@ code {
 
 #gamesTable_paginate {
   text-align: right;
+}
+
+#avatar {
+  width: 150px;
+}
+
+#table-margin {
+  margin: auto;
 }
