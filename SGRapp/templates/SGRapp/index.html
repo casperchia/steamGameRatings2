@@ -2,12 +2,28 @@
 
 {% block head_block %}
     <script>
+        // $(document).ready(function(){
+        //     $("#steamid-btn").click(function(){
+        //         $(this).button('loading');
+        //     });
+        //     $("#username-btn").click(function(){
+        //         $(this).button('loading');
+        //     });
+        // });
         $(document).ready(function(){
-            $("#steamid-btn").click(function(){
-                $(this).button('loading');
+            $(document).on("click", "#steamid-btn", function() {
+                var $this = $(this);
+                $this.button('loading');
+                setTimeout(function() {
+                    $this.button('reset');
+                }, 2000);
             });
-            $("#username-btn").click(function(){
-                $(this).button('loading');
+            $(document).on("click", "#username-btn", function() {
+                var $this = $(this);
+                $this.button('loading');
+                setTimeout(function() {
+                    $this.button('reset');
+                }, 2000);
             });
         });
     </script>
