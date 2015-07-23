@@ -30,18 +30,17 @@
         <div class="jumbotron">
             <div class="row">
                 <div class="col-xs-12 col-sm-2">
-                    <table id="table-margin">
+                    <table class="margin-auto">
                         <tr><td>
                             <img src="{{ avatarImg }}" class="img-thumbnail" id="avatar"/>
                         </td></tr>
                     </table>
                 </div>
                 <div class="col-xs-12 col-sm-2">
-                    <table id="table-margin">
-                        <tr><td>Steam Name: {{ steamName }}</td></tr>
-                        <tr><td>SteamID: {{ steamId }}</td></tr>
-                        <tr><td>Level {{ steamLevel }}</td></tr>
-                        <tr><td>{{ steamUrl }}</td></tr>
+                    <table class="info-table">
+                        <tr id="info-th"><th><a href="http://steamcommunity.com/profiles/{{ steamId }}/">{{ steamName }}</a></th></tr>
+                        <tr id="info-td"><td>Level {{ steamLevel }}</td></tr>
+                        <tr id="info-td"><td>{{ games|length }} games</td></tr>
                     </table>
                 </div>
             </div>

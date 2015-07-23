@@ -1,5 +1,18 @@
 {% extends 'SGRapp/base.html' %}
 
+{% block head_block %}
+    <script>
+        $(document).ready(function(){
+            $("#steamid-btn").click(function(){
+                $(this).button('loading');
+            });
+            $("#username-btn").click(function(){
+                $(this).button('loading');
+            });
+        });
+    </script>
+{% endblock %}
+
 {% block body_block %}
 
     <div class="container text-align-center" id="welcome-container">
@@ -16,7 +29,7 @@
                 <label for="userInput">http://steamcommunity.com/id/</label>
                 <input type="text" class="form-control" name="userInput" placeholder="Username">
                 <input type="hidden" name="inputType" value="steamName">
-                <input type="submit" class="btn btn-default" value="Enter">
+                <button type="submit" class="btn btn-default" id="username-btn" data-loading-text="<span class='spinning glyphicon glyphicon-refresh glyphicon-refresh-animate'></span> Loading...">Enter</button>
             </form>
 
             <h4>or</h4>
@@ -25,7 +38,7 @@
                 <label for="userInput">http://steamcommunity.com/profiles/</label>
                 <input type="text" class="form-control" name="userInput" placeholder="SteamID">
                 <input type="hidden" name="inputType" value="steamId">
-                <input type="submit" class="btn btn-default" value="Enter">
+                <button type="submit" class="btn btn-default" id="steamid-btn" data-loading-text="<span class='spinning glyphicon glyphicon-refresh glyphicon-refresh-animate'></span> Loading...">Enter</button>
             </form>
 
         </div>
