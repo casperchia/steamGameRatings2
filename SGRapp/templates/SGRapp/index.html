@@ -10,6 +10,14 @@
         });
 
         $(document).ready(function(){
+            $("#username-btn").click(function(){
+                $("div#divLoading").addClass('show');
+            });
+
+            $("#steamid-btn").click(function(){
+                $("div#divLoading").addClass('show');
+            });
+
             $("#steamid-btn").click(function(){
                 $(this).button('loading');
             });
@@ -21,6 +29,7 @@
 {% endblock %}
 
 {% block body_block %}
+    <div id="divLoading"></div>
 
     <div class="container text-align-center" id="welcome-container">
         <h1 class="font-extra-large">Welcome to Steam Ratings!</h1>

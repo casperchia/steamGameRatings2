@@ -111,3 +111,35 @@ code {
     from { -webkit-transform: rotate(0deg);}
     to { -webkit-transform: rotate(360deg);}
 }
+
+#divLoading {
+    display : none;
+}
+
+#divLoading.show {
+    display : block;
+    position : fixed;
+    z-index: 100;
+    background-image : url('../gifs/rollingBlue.gif');
+    background-color:#FDFFFC;
+    /*background-color: rgba(200, 200, 200, .5);*/
+    opacity : 0.8;
+    background-repeat : no-repeat;
+    background-position : center;
+    left : 0;
+    bottom : 0;
+    right : 0;
+    top : 0;
+}
+
+#loadinggif.show {
+    left : 50%;
+    top : 50%;
+    position : absolute;
+    z-index : 101;
+    width : 32px;
+    height : 32px;
+    margin-left : -16px;
+    margin-top : -16px;
+}
+
