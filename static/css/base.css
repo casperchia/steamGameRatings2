@@ -1,0 +1,146 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color: #FDFFFC;
+  font-family: 'Ubuntu', sans-serif;
+  /*color: #011627;*/
+  color: #01213A;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  /*background-color: #011627;*/
+  background-color: #01213A;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+
+#welcome-container {
+  padding: 20px 15px 30px;
+}
+.container .footer-text {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #FDFFFC;
+}
+
+code {
+  font-size: 80%;
+}
+
+.navbar-title {
+    font-weight: bold;
+    font-size: 30px;
+    /*color: #011627;*/
+    color: #01213A;
+}
+
+.container-lightblue {
+  background-color: #2EC4B6;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.font-extra-large {
+  font-size: 60px;
+}
+
+#form-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#gamesTable_filter {
+  text-align: right;
+}
+
+#gamesTable_paginate {
+  text-align: right;
+}
+
+#avatar {
+  width: 150px;
+}
+
+.info-table {
+  width: 200px;
+  margin: auto;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+#info-th a {
+  font-size: 22px;
+  text-decoration: none;
+}
+
+#info-td {
+  /*font-size: 18px;*/
+}
+
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+#divLoading {
+    display : none;
+}
+
+#divLoading.show {
+    display : block;
+    position : fixed;
+    z-index: 100;
+    background: #FDFFFC url('../gifs/rollingBlue.gif');
+    /*background-image : url('../gifs/rollingBlue.gif');*/
+    /*background-color:#FDFFFC;*/
+    /*background-color: rgba(200, 200, 200, .5);*/
+    opacity : 0.8;
+    background-repeat : no-repeat;
+    background-position : center;
+    left : 0;
+    bottom : 0;
+    right : 0;
+    top : 0;
+}
+
+#loadinggif.show {
+    left : 50%;
+    top : 50%;
+    position : absolute;
+    z-index : 101;
+    width : 32px;
+    height : 32px;
+    margin-left : -16px;
+    margin-top : -16px;
+}
+
