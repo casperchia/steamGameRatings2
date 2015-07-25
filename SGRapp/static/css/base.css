@@ -144,3 +144,10 @@ code {
     margin-top : -16px;
 }
 
+.col-pos {
+  color: #00824C;
+}
+
+.col-neg {
+  color: #D73B37;
+}
