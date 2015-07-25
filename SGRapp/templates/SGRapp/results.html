@@ -3,9 +3,6 @@
 {% block head_block %}
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    <!-- jQuery -->
-    <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-
     <!-- DataTables -->
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
@@ -37,7 +34,9 @@
                 cell.innerHTML = i+1;
             } );
         } ).draw();
-    } );
+
+        $('[data-toggle="tooltip"]').tooltip();
+        } );
     </script>
 {% endblock %}
 
@@ -72,10 +71,12 @@
                 <th>#</th>
                 <th>App ID</th>
                 <th>Name</th>
-                <th><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></th>
-                <th><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></th>
+                <th><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Positive Ratings"></span></th>
+                <th><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Negative Ratings"></span></th>
                 <th>User Rating</th>
-                <th>Wilson</th>
+                <th>Wilson
+                    <a href="http://www.evanmiller.org/how-not-to-sort-by-average-rating.html" data-toggle="tooltip" target='_blank' title="The Wilson ratings is ...">(?)</a>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -92,5 +93,6 @@
             {% endfor %}
         </tbody>
     </table>
+
     </div>
 {% endblock %}
