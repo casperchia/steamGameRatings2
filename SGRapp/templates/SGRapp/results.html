@@ -83,10 +83,14 @@
                     <td></td>
                     <td>
                         <div class="gameLogo">
-                            <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{ game.appid }}/capsule_sm_120.jpg"/>
+                            <a href="http://store.steampowered.com/app/{{ game.appid }}/" target="_blank">
+                                <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{ game.appid }}/capsule_sm_120.jpg"/>
+                            </a>
                         </div>
                         <div class="gameName">
-                            {{ game.name }}
+                            <a href="http://store.steampowered.com/app/{{ game.appid }}/" target="_blank">
+                                {{ game.name }}
+                            </a>
                         </div>
                     </td>
                     <td class="col-pos">{{ game.positive }}</td>
