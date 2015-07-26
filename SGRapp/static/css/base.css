@@ -184,3 +184,23 @@ table.dataTable thead th.sorting_desc:after {
 * {
     border-radius: 0 !important;
 }
+
+#gamesTable > tbody > tr > td {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    vertical-align: middle;
+}
+
+.gameLogo {
+    float: left;
+    padding-right: 10px;
+    width: 130px;
+}
+
+.gameName {
+    min-width: 60px;
+    width: auto;
+    overflow: hidden;
+}
