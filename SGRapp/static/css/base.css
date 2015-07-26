@@ -121,9 +121,6 @@ code {
     position : fixed;
     z-index: 100;
     background: #FDFFFC url('../gifs/rollingBlue.gif');
-    /*background-image : url('../gifs/rollingBlue.gif');*/
-    /*background-color:#FDFFFC;*/
-    /*background-color: rgba(200, 200, 200, .5);*/
     opacity : 0.8;
     background-repeat : no-repeat;
     background-position : center;
