@@ -121,9 +121,6 @@ code {
     position : fixed;
     z-index: 100;
     background: #FDFFFC url('../gifs/rollingBlue.gif');
-    /*background-image : url('../gifs/rollingBlue.gif');*/
-    /*background-color:#FDFFFC;*/
-    /*background-color: rgba(200, 200, 200, .5);*/
     opacity : 0.8;
     background-repeat : no-repeat;
     background-position : center;
@@ -161,8 +158,8 @@ table.dataTable thead th.sorting:after,
 table.dataTable thead th.sorting_asc:after,
 table.dataTable thead th.sorting_desc:after {
     position: absolute;
-    top: 6px;
-    right: 8px;
+    top: 9px;
+    right: 4px;
     display: block;
     font-family: FontAwesome;
 }
@@ -183,4 +180,28 @@ table.dataTable thead th.sorting_desc:after {
  /*Get rid of all rounded edges!*/
 * {
     border-radius: 0 !important;
+}
+
+#gamesTable > tbody > tr > td {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    vertical-align: middle;
+}
+
+.gameLogo {
+    float: left;
+    padding-right: 10px;
+    width: 130px;
+}
+
+.gameName {
+    min-width: 60px;
+    width: auto;
+    overflow: hidden;
+}
+
+.gameName a {
+    color: #01213A;
 }
